@@ -24,13 +24,13 @@ const Form = ({ name, src, children, onSubmit }: FormProps) => {
     }
   };
   return (
-    <div className="flex-grow flex items-center  gap-5">
+    <div className="flex-grow flex items-center gap-5 border-1">
       <form
         className="flex-grow"
         onSubmit={handleSubmit}
       >
         <input
-          className="w-full"
+          className="w-full p-2.5 focus:outline-none focus:ring-1 focus:ring-gray-100 rounded-xl border-gray-100"
           onChange={handleChange}
           value={value}
           placeholder="메시지를 입력하세요"
