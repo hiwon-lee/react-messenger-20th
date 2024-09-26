@@ -27,5 +27,10 @@ export default function Clock() {
     return () => clearInterval(id);
   }, []);
 
-  return <p ref={timeRef}></p>;
+  return (
+    <p
+      ref={timeRef}
+      className="flex items-center justify-center text-center font-bold text-nowrap"
+    ></p>
+  );
 }
