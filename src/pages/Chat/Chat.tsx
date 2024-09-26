@@ -3,6 +3,7 @@ import { RootState } from '../../redux/store';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import defaultMessages from '../../data/messages.json';
 
+import StatusBar from '../../components/common/StatusBar';
 import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';
@@ -31,7 +32,8 @@ export default function Chat() {
     setMessages([...messages, newMessage]);
   };
   return (
-    <div className="text-sm">
+    <div className="h-full flex flex-col">
+      <StatusBar />
       <ChatHeader />
       <ChatMain messages={messages} />
       <ChatForm addMessage={(text: string) => addMessage(text)} />

@@ -8,7 +8,7 @@ export default function ChatMain({ messages }: ChatMainInterface) {
   const userName = useSelector((state: RootState) => state.user.name);
 
   return (
-    <div className="m-5 flex flex-col gap-1">
+    <div className="flex-1 m-5 flex flex-col gap-1">
       {messages.map((message) => (
         <div>
           <MessageItem
