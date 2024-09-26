@@ -1,7 +1,7 @@
 export default function Profile() {
   return (
     <div
-      className="rounded-full w-7 h-7
+      className="rounded-full w-8 h-8
  bg-pink-light text-pink-dark flex items-center justify-center 
 "
     >
