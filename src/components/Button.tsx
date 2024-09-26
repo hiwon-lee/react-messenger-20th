@@ -1,16 +1,24 @@
 interface ButtonProps {
-  children: string;
+  children?: string;
+  src?: string;
   type: 'submit' | 'reset' | 'button' | undefined;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
-const Button = ({ children, type, onClick }: ButtonProps) => {
+const Button = ({ children, src, type, onClick }: ButtonProps) => {
   return (
     <button
       type={type}
       onClick={onClick}
     >
-      {children}
+      {src ? (
+        <img
+          src={src}
+          alt={src}
+        />
+      ) : (
+        children
+      )}
     </button>
   );
 };

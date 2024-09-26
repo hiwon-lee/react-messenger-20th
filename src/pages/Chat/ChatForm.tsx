@@ -1,31 +1,34 @@
+import { RootState } from '../../redux/store';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import Profile from '../../components/Profile';
-import ChatHeader from './ChatHeader';
+import Form from '../../components/Form';
 import Button from '../../components/Button';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-export default function ToDoList() {
-  const [value, setValue] = useState('');
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = event;
-    setValue(value);
+import addCircle from '../../assets/addCircle.svg';
+import emoji from '../../assets/emoji.svg';
+export default function ChatForm() {
+  const userName = useSelector((state: RootState) => state.user.name);
+  const addMessage = (text: string) => {
+    // TODO : 메시지 저장 로직 추가
+    const newMessage = {
+      id: new Date().toString(),
+      text: text,
+      sender: userName,
+      timeStamp: new Date().toLocaleDateString,
+    };
   };
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(value);
-  };
-
   return (
-    <div className="bg-primary">
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          value={value}
-          placeholder="입력하세요"
-        ></input>
-        <button>제출</button>
-      </form>
+    <div className="flex gap-4 justify-between h-24 p-5 bg-border-l-rose-700 ">
+      <Button
+        type="button"
+        src={addCircle}
+      />
+      <Form
+        name={userName}
+        onSubmit={addMessage}
+        src={emoji}
+      />
     </div>
   );
 }
