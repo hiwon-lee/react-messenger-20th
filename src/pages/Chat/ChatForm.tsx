@@ -12,7 +12,7 @@ export default function ChatForm({ addMessage }: ChatFormInterface) {
   const userName = useSelector((state: RootState) => state.user.name);
 
   return (
-    <div className="bg-slate-100 flex gap-4 justify-between h-24 p-5 bg-border-l-rose-700 ">
+    <div className="flex gap-4 justify-between h-23 p-5 bg-border-l-rose-700 ">
       <Button
         type="button"
         src={addCircle}

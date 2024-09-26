@@ -8,9 +8,6 @@ import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';
 
-import { ChatInterface } from './ChatInterface';
-import { useEffect } from 'react';
-
 export default function Chat() {
   const userName = useSelector((state: RootState) => state.user.name);
 
