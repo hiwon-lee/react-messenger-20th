@@ -1,8 +1,15 @@
+import Chat from './pages/Chat/Chat';
+import './App.css';
+import StatusBar from './components/common/StatusBar';
+
 function App() {
   return (
-    <div>
-      <h1>20기 프론트엔드 파이팅!!! 디자인과 사이좋게 지내요~~~</h1>
-    </div>
+    <>
+      <div className="App">
+        <StatusBar />
+        <Chat />
+      </div>
+    </>
   );
 }
 
