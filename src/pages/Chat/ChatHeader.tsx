@@ -20,7 +20,7 @@ export default function ChatHeader() {
       />
       <Profile />
       <div className="mx-2.5 flex flex-col ">
-        <p>{userName || '박'}</p>
+        <p>{userName}</p>
         <p className="text-gray-500 text-caption">{recentTime}</p>
       </div>
     </div>

@@ -20,8 +20,8 @@ export default function Chat() {
   const addMessage = (text: string) => {
     const newMessage = {
       id: new Date().toString(),
-      name: userName,
-      sender: 'sender',
+      userName: userName,
+      receiver: 'receiver',
       content: text,
       timeStamp: new Date().toLocaleDateString,
     };

@@ -1,10 +1,17 @@
+export interface ReceiverState {
+  _id: string;
+  name: string;
+  profileImg: string | undefined;
+}
+
 export interface ChatInterface {
-  name: string; // 나
-  sender: string; // 상대방
-  time: string; // 메시지 친 시간
+  id: string; // 고유ID
+  userName: string; // 나
+  receiver: string; // 상대방
   content: string; // 메시지 내용
-  timeStamp: string; // 언제썼는지
-  isOwnMessage: boolean; // 이 메시지가 내건지
+  timeStamp: string; // 언제썼는지 (HH:MM)
+  date: string; // 메시지를 보낸 날짜 (YYYY-MM-DD)
+  isOwnMessage?: boolean; // 이 메시지가 내건지
 }
 
 // ChatMainInterface : ChatInterface로 이뤄진 배열
