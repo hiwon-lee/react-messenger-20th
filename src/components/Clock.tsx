@@ -30,7 +30,7 @@ export default function Clock() {
   return (
     <p
       ref={timeRef}
-      className="flex items-center justify-center text-center font-bold text-nowrap"
+      className="text-caption flex items-center justify-center text-center font-bold text-nowrap"
     ></p>
   );
 }
