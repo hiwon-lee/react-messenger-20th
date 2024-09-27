@@ -2,10 +2,11 @@ interface ButtonProps {
   children?: string;
   src?: string;
   type: 'submit' | 'reset' | 'button' | undefined;
-  onClick?: () => void;
+  onClick?: (text: any) => void;
 }
 
 const Button = ({ children, src, type, onClick }: ButtonProps) => {
+  console.log(children);
   return (
     <button
       type={type}
