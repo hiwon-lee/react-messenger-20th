@@ -4,7 +4,7 @@ import { ChatInterface } from '../pages/Chat/ChatInterface';
 const MessageItem = ({ isOwnMessage, content, emoji }: ChatInterface) => {
   return (
     <div
-      className={`max-w-60 text-body px-2.5 py-1.5 rounded-xl w-fit ${
+      className={`max-w-72 text-body p-2 rounded-xl w-fit ${
         isOwnMessage
           ? 'bg-primary text-white ms-auto'
           : 'bg-gray-50 text-gray-900 me-auto'
