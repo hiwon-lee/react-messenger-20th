@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../redux/store';
-import { setUser } from '../redux/userSlice';
+import { RootState } from '@redux/store';
+import { setUser } from '@redux/userSlice';
 
 import Button from './Button';
 import { useEffect } from 'react';

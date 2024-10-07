@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { RootState } from '@redux/store';
+import { useLocalStorage } from '@hooks/useLocalStorage';
+
 import defaultMessages from '../../data/messages.json';
 import { ChatInterface } from './ChatInterface';
-
 import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';

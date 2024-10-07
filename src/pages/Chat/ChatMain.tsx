@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
-import type { RootState } from '../../redux/store';
+import type { RootState } from '@redux/store';
 import { useSelector, useDispatch } from 'react-redux';
-import MessageItem from '../../components/MessageItem';
+import MessageItem from '@components/MessageItem';
 import { ChatMainInterface } from './ChatInterface';
-import { setEmoji } from '../../redux/messageSlice';
-import Button from '../../components/Button';
+import { setEmoji } from '@redux/messageSlice';
+import Button from '@components/Button';
 
 // 이모지 아이콘 (5개)
-import angryEmotion from '../../assets/emotion/angry.png';
-import awesomeEmotion from '../../assets/emotion/awsome.png';
-import heartEmotion from '../../assets/emotion/heart.png';
-import smileEmotion from '../../assets/emotion/smile.png';
-import surpriseEmotion from '../../assets/emotion/surprise.png';
+import angryEmotion from '@assets/emotion/angry.png';
+import awesomeEmotion from '@assets/emotion/awsome.png';
+import heartEmotion from '@assets/emotion/heart.png';
+import smileEmotion from '@assets/emotion/smile.png';
+import surpriseEmotion from '@assets/emotion/surprise.png';
 
 // 메시지 날짜 변경 시 표기될 날짜 정보
 const formatDate = (dateString: string) => {

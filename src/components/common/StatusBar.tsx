@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Clock from '../Clock';
-import statusIcon from '../../assets/status.svg';
+import Clock from '@components/Clock';
+import statusIcon from '@assets/status.svg';
 
 export default function StatusBar() {
   return (

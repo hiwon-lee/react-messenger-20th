@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ChatInterface } from '../pages/Chat/ChatInterface';
+import { ChatInterface } from '@pages/Chat/ChatInterface';
 
 // 임시 데이터
 import defaultMessages from '../data/messages.json';

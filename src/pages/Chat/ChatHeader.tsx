@@ -1,10 +1,8 @@
-import type { RootState } from '../../redux/store';
+import type { RootState } from '@redux/store';
 import { useSelector } from 'react-redux';
-import { setUser } from '../../redux/userSlice';
-import { ChatInterface } from './ChatInterface';
 
-import prevButton from '../../assets/prevButton.png';
-import Profile from '../../components/Profile';
+import prevButton from '@assets/prevButton.png';
+import Profile from '@components/Profile';
 
 // ChatHeader : 현재 누구와 대화하고 있는 지 확인할 수 있음
 export default function ChatHeader() {

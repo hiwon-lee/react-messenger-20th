@@ -1,12 +1,12 @@
-import { RootState } from '../../redux/store';
+import { RootState } from '@redux/store';
 import { useSelector, useDispatch } from 'react-redux';
-import Form from '../../components/Form';
-import Button from '../../components/Button';
+import Form from '@components/Form';
+import Button from '@components/Button';
 
-import addCircle from '../../assets/addCircle.svg';
-import emoji from '../../assets/emoji.svg';
+import addCircle from '@assets/addCircle.svg';
+import emoji from '@assets/emoji.svg';
 
-import { ChatFormInterface } from './ChatInterface';
+import { ChatFormInterface } from '@pages/Chat/ChatInterface';
 
 export default function ChatForm({ addMessage }: ChatFormInterface) {
   const userName = useSelector((state: RootState) => state.user.name);
