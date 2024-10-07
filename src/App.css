@@ -1,9 +1,9 @@
 .App {
   font-family: 'Inter', sans-serif; /* Set font to Inter */
   width: 375px;
-  height: 812px;
-  max-height: 812px;
-  margin: 1.25rem;
+  height: 100vh;
+  /* max-height: 812px; */
+  /* margin: 1.25rem; */
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  margin: 50px auto;
+  margin: 0 auto;
 }

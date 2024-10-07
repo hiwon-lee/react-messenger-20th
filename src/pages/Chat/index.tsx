@@ -4,7 +4,6 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 import defaultMessages from '../../data/messages.json';
 import { ChatInterface } from './ChatInterface';
 
-import StatusBar from '../../components/common/StatusBar';
 import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';
@@ -37,7 +36,6 @@ export default function Chat() {
   };
   return (
     <div className="h-full flex flex-col">
-      <StatusBar />
       <ChatHeader />
       <ChatMain messages={messages} />
       <ChatForm addMessage={(text: string) => addMessage(text)} />
