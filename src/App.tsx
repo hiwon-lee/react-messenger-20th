@@ -33,7 +33,6 @@ function App() {
             element={<More />}
           ></Route>
         </Routes>
-        <Chat />
       </BrowserRouter>
     </div>
   );
