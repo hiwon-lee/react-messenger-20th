@@ -4,6 +4,7 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@assets/*": ["./assets/*"],
+      "@menuIcon/*": ["./assets/menu/*"],
       "@styles/*": ["./styles/*"],
       "@redux/*": ["./redux/*"],
       "@contexts/*": ["./contexts/*"],
