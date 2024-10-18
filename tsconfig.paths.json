@@ -10,7 +10,8 @@
       "@contexts/*": ["./contexts/*"],
       "@hooks/*": ["./hooks/*"],
       "@utils/*": ["./utils/*"],
-      "@pages/*": ["./pages/*"]
+      "@pages/*": ["./pages/*"],
+      "@interface/*": ["./interface/*"]
     }
   }
 }
