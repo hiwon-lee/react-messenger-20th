@@ -6,8 +6,8 @@ interface HeaderProps {
 
 export default function Header({ title }: HeaderProps) {
   return (
-    <div className="flex justify-between mx-5 h-10">
-      <div>{title}</div>
+    <div className="flex justify-between mx-5 h-10 justify-items-center">
+      <div className="flex justify-items-center">{title}</div>
       <StyledStatus>
         <img
           src={MORE}

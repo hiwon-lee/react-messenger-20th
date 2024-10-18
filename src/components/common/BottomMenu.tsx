@@ -1,4 +1,4 @@
-import NamedButton from '@components/Button';
+import { NamedButton } from '@components/Button';
 import CHAT from '@menuIcon/chat.png';
 import MEMBERS from '@menuIcon/members.png';
 import MORE from '@menuIcon/more.png';
@@ -13,27 +13,31 @@ export default function BottomMenu() {
         src={MEMBERS}
         type="button"
         buttonName="구성원"
+        link="/members"
       />
       <NamedButton
         src={NOTICE}
         type="button"
         buttonName="그룹홍보"
+        link="/notice"
       />
       <NamedButton
         src={CHAT}
         type="button"
         buttonName="채팅"
+        link="/chat"
       />
-
       <NamedButton
         src={TEAM}
         type="button"
         buttonName="팀"
+        link="/team"
       />
       <NamedButton
         src={MORE}
         type="button"
         buttonName="더보기"
+        link="/more"
       />
     </StyledBottomMenu>
   );
@@ -42,5 +46,5 @@ export default function BottomMenu() {
 const StyledBottomMenu = styled.div`
   display: flex;
   margin: 1rem;
-  gap: 0.5rem;
+  gap: 1.5rem;
 `;
