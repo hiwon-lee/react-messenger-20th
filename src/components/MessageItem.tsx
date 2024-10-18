@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatInterface } from '@pages/Chat/ChatInterface';
+import { ChatInterface } from 'interface/ChatInterface';
 
 const MessageItem = ({ isOwnMessage, content, emoji }: ChatInterface) => {
   return (

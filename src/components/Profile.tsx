@@ -10,10 +10,10 @@ export default function Profile() {
   const currUser = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(currUser.profileImg);
-    return;
-  });
+  // useEffect(() => {
+  //   console.log(currUser.profileImg);
+  //   return;
+  // });
 
   const toggleProfile = (id: string) => {
     // console.log(id);
