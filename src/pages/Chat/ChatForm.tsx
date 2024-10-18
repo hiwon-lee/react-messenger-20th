@@ -6,7 +6,7 @@ import Button from '@components/Button';
 import addCircle from '@assets/addCircle.svg';
 import emoji from '@assets/emoji.svg';
 
-import { ChatFormInterface } from '@pages/Chat/ChatInterface';
+import { ChatFormInterface } from 'interface/ChatInterface';
 
 export default function ChatForm({ addMessage }: ChatFormInterface) {
   const userName = useSelector((state: RootState) => state.user.name);

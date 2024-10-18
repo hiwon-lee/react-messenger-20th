@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import profile from '../assets/profile.png';
-import { ReceiverState } from '../pages/Chat/ChatInterface';
+import profile from '@assets/profile.png';
+import { ReceiverState } from 'interface/ChatInterface';
 
 // 예시 사용자 : data
 const user1: ReceiverState = {

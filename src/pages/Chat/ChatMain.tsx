@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { RootState } from '@redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 import MessageItem from '@components/MessageItem';
-import { ChatMainInterface } from './ChatInterface';
+import { ChatMainInterface } from '@interface/ChatInterface';
 import { setEmoji } from '@redux/messageSlice';
 import Button from '@components/Button';
 

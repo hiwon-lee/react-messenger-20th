@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-interface ButtonProps {
-  children?: string;
-  src?: string;
-  buttonName?: string;
-  link?: string;
-  type: 'submit' | 'reset' | 'button' | undefined;
-  onClick?: (text: any) => void;
-}
+import { ButtonProps } from '@interface/ButtonInterface';
 
 const Button = ({ children, src, type, onClick }: ButtonProps) => {
   return (
@@ -27,6 +19,22 @@ const Button = ({ children, src, type, onClick }: ButtonProps) => {
     </button>
   );
 };
+
+export const MainButton = (props: ButtonProps) => {
+  return (
+    <div
+      className="rounded-full w-10 h-10
+    bg-pink-light text-pink-dark flex items-center justify-center 
+   "
+    >
+      <Button
+        type={props.type}
+        src={props.src}
+        children={props.children}
+      />
+    </div>
+  );
+};
 export const NamedButton = (props: ButtonProps) => {
   return (
     <Link to={props.link || '/'}>
@@ -36,11 +44,20 @@ export const NamedButton = (props: ButtonProps) => {
           src={props.src}
         />
         <div className="text-small">{props.buttonName}</div>
-        {/* <div> 버튼이다.</div> */}
       </StyledNamedButton>
     </Link>
   );
 };
+const StyledMainButton = styled.div`
+  background-color: var(--pink-light);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20px;
+  color: var(--pink-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const StyledNamedButton = styled.div`
   display: flex;

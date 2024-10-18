@@ -1,7 +1,9 @@
 export interface ReceiverState {
   _id: string;
-  name: string;
-  profileImg: string | undefined;
+  name: string; // 받는 사람 이름
+  profileImg?: string | undefined;
+  lastMessage?: string;
+  lastTimeStamp?: string;
 }
 
 export interface ChatInterface {

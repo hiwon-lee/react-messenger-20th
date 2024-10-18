@@ -3,7 +3,7 @@ import { RootState } from '@redux/store';
 import { useLocalStorage } from '@hooks/useLocalStorage';
 
 import defaultMessages from '../../data/messages.json';
-import { ChatInterface } from './ChatInterface';
+import { ChatInterface } from '@interface/ChatInterface';
 import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';
