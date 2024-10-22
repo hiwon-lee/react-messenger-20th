@@ -6,10 +6,11 @@ type FormProps = {
   name: string;
   src?: string;
   children?: string;
+  placeHolder: string;
   onSubmit: (message: string) => void;
 };
 
-const Form = ({ name, src, children, onSubmit }: FormProps) => {
+const Form = ({ name, src, children, placeHolder, onSubmit }: FormProps) => {
   const [value, setValue] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +34,7 @@ const Form = ({ name, src, children, onSubmit }: FormProps) => {
           className="w-full  focus:outline-none "
           onChange={handleChange}
           value={value}
-          placeholder="메시지를 입력하세요"
+          placeholder={placeHolder}
         ></input>
       </form>
       <Button

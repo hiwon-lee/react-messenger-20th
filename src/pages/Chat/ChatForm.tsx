@@ -21,6 +21,7 @@ export default function ChatForm({ addMessage }: ChatFormInterface) {
         name={userName}
         onSubmit={(text: string) => addMessage(text)}
         src={emoji}
+        placeHolder="메시지를 입력하세요"
       />
     </div>
   );
