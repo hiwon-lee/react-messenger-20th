@@ -16,14 +16,14 @@ export default function MemberListItem(user: ReceiverState) {
           type="button"
         />
       )}
-      <div className="flex flex-col gap-1">
-        <div>{user.name}</div>
-        <div className="text-body text-gray-500">
-          {user.lastMessage ? user.lastMessage : ''}
+      <div className="w-full flex gap-1 border-b-[1px] border-solid border-gray-100 ">
+        <div className="flex flex-col gap-1 grow mb-4">
+          <div>{user.name}</div>
+          <div className="text-body text-gray-500">
+            {user.lastMessage ? user.lastMessage : ''}
+          </div>
         </div>
-      </div>
-      <div className="ms-auto text-caption text-gray-500">
-        {user.lastTimeStamp}
+        <div className="text-caption text-gray-500">{user.lastTimeStamp}</div>
       </div>
     </StyledList>
   );
@@ -31,7 +31,6 @@ export default function MemberListItem(user: ReceiverState) {
 
 const StyledList = styled.div`
   display: flex;
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
   gap: 1rem;
-  border-bottom: 1px solid var(--gray-100);
 `;

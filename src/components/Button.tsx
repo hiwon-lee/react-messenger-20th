@@ -5,6 +5,7 @@ import { ButtonProps } from '@interface/ButtonInterface';
 const Button = ({ children, src, type, onClick }: ButtonProps) => {
   return (
     <button
+      className="w-6 h-6 text-center"
       type={type}
       onClick={onClick}
     >
@@ -23,7 +24,7 @@ const Button = ({ children, src, type, onClick }: ButtonProps) => {
 export const MainButton = (props: ButtonProps) => {
   return (
     <div
-      className="rounded-full w-10 h-10
+      className="rounded-full w-10 h-10 p-2
     bg-pink-light text-pink-dark flex items-center justify-center 
    "
     >
