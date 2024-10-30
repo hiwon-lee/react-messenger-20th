@@ -6,15 +6,19 @@ export interface ReceiverState {
   lastTimeStamp?: string;
 }
 
+export type SenderType = 'you' | 'me';
+export interface MessageInterface {
+  sender: SenderType;
+  message: string;
+  timeStamp: string;
+  date: string;
+  emoji?: string | undefined; // 이모지 정보
+}
+
 export interface ChatInterface {
   id: string; // 고유ID
-  userName: string; // 나
-  receiver: string; // 상대방
-  content: string; // 메시지 내용
-  timeStamp: string; // 언제썼는지 (HH:MM)
-  date: string; // 메시지를 보낸 날짜 (YYYY-MM-DD)
-  isOwnMessage?: boolean; // 이 메시지가 내건지
-  emoji?: string | undefined; // 이모지 정보
+  sender: SenderType; // 너/나
+  messages: Array<MessageInterface>;
 }
 
 // ChatMainInterface : ChatInterface로 이뤄진 배열

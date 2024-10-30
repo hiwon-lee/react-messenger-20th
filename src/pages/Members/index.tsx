@@ -2,37 +2,43 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
 import { useLocalStorage } from '@hooks/useLocalStorage';
 
-import defaultMessages from '../../data/messages.json';
+import memberList from '../../data/users.json';
 import Header from '@components/common/Header';
 import BottomMenu from '@components/common/BottomMenu';
 import MemberListItem from '@components/MemberListItem';
 import Form from '@components/Form';
+import SEARCH from '@assets/search.png';
+
+import { UserInterface } from '@interface/UserInterface';
 
 export default function Members() {
-  const addMember = (text: string) => {
+  const searchMember = (text: string) => {
     alert(text);
   };
+  const members = useLocalStorage<UserInterface[]>({
+    key: 'members',
+    initialValue: memberList,
+  })[0];
   return (
     <div className="h-full flex flex-col">
       <Header title="목록" />
-      <div className="flex p-2 gap-2">
+      <div className="flex gap-4 justify-between h-23 p-5 bg-border-l-rose-700 ">
         <Form
+          key="searchForm"
+          onSubmit={(text: string) => searchMember(text)}
           placeHolder="검색"
-          onSubmit={(text: string) => addMember(text)}
         />
       </div>
-      <MemberListItem
-        _id="temp"
-        name="이희원"
-        lastMessage="꺼져"
-        lastTimeStamp="오후 10:34"
-      />
-      <MemberListItem
-        _id="temp"
-        name="이희원"
-        lastMessage="꺼져"
-        lastTimeStamp="오후 10:34"
-      />
+      {members.toString()}
+      {/* {members.map((member, idx) => {
+        <MemberListItem
+          _id="temp"
+          name={member}
+          lastMessage="꺼져"
+          lastTimeStamp="오후 10:34"
+        />;
+      })} */}
+
       <BottomMenu />
     </div>
   );

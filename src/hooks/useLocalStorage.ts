@@ -1,13 +1,16 @@
 import { useState } from 'react';
 
-interface LocalStorageProps {
+interface LocalStorageProps<T> {
   key: string;
-  initialValue: any; // 바꿔야 됨
+  initialValue: T; // 바꿔야 됨
 }
 // useLocalStorage : localStorage 관리하는 커스텀 훅
-export function useLocalStorage({ key, initialValue }: LocalStorageProps) {
+export function useLocalStorage<T>({
+  key,
+  initialValue,
+}: LocalStorageProps<T>) {
   // localStorage에서 값을 가져오거나 초기 값을 설정
-  const [storedValue, setStoredValue] = useState(() => {
+  const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key); // key에 해당하는 놈들 가져옴
       return item ? JSON.parse(item) : initialValue;
