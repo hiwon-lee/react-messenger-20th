@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "userName": "이지민",
+    "profileImg": "안녕 재원아",
+    "isOnline": "false",
+    "email": "hiiwonii1012@gmail.com",
+    "phoneNum": "01028862790",
+    "instagram": "2e_2h_w0n"
+  },
+  {
+    "id": "1",
+    "userName": "이지민",
+    "profileImg": "안녕 재원아",
+    "isOnline": "true",
+    "email": "jimin0416@gmail.com",
+    "phoneNum": "01096222790",
+    "instagram": "jimin2"
+  }
+]
