@@ -1,6 +1,6 @@
 {
   "id": "1",
-  "friendName": "이희원",
+  "sender": "이희원",
   "messages": [
     {
       "sender": "me",
@@ -12,46 +12,45 @@
       "sender": "me",
       "message": "반가워",
       "timeStamp": "21:41:24",
-      "date": "2024-09-26"
+      "date": "2024-09-26",
+      "emoji": ""
     },
     {
       "sender": "me",
-      "userName": "이희원",
       "message": "나는 희원이야",
       "timeStamp": "21:41:27",
-      "date": "2024-09-26"
+      "date": "2024-09-26",
+      "emoji": ""
     },
     {
       "sender": "me",
-      "userName": "이희원",
       "message": "00이지만",
       "timeStamp": "21:41:42",
-      "date": "2024-09-26"
+      "date": "2024-09-26",
+      "emoji": ""
     },
     {
       "sender": "me",
-      "userName": "이희원",
       "message": "액면가는 05지",
       "timeStamp": "21:41:50",
-      "date": "2024-09-26"
+      "date": "2024-09-26",
+      "emoji": ""
     },
     {
       "sender": "you",
-      "userName": "박재원",
       "message": "음~",
       "timeStamp": "14:47:01",
-      "date": "2024-09-27"
+      "date": "2024-09-27",
+      "emoji": ""
     },
     {
       "sender": "you",
-      "userName": "박재원",
       "message": "ㅇㅈ",
       "timeStamp": "14:47:02",
       "date": "2024-09-27"
     },
     {
       "sender": "me",
-      "userName": "이희원",
       "message": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
       "timeStamp": "14:47:40",
       "date": "2024-09-27"

@@ -2,19 +2,19 @@
   {
     "id": "1",
     "userName": "이지민",
-    "profileImg": "안녕 재원아",
-    "isOnline": "false",
-    "email": "hiiwonii1012@gmail.com",
-    "phoneNum": "01028862790",
-    "instagram": "2e_2h_w0n"
-  },
-  {
-    "id": "1",
-    "userName": "이지민",
-    "profileImg": "안녕 재원아",
-    "isOnline": "true",
+    "profileImg": "",
+    "isOnline": false,
     "email": "jimin0416@gmail.com",
     "phoneNum": "01096222790",
-    "instagram": "jimin2"
+    "instagram": "o_ojj_min"
+  },
+  {
+    "id": "2",
+    "userName": "이도연",
+    "profileImg": "",
+    "isOnline": true,
+    "email": "leeee1225@gmail.com",
+    "phoneNum": "01011112222",
+    "instagram": "lee"
   }
 ]
