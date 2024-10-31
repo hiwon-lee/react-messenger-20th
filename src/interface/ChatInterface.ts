@@ -6,7 +6,7 @@ export interface ReceiverState {
   lastTimeStamp?: string;
 }
 
-export type SenderType = 'you' | 'me';
+export type SenderType = 'you' | 'me' | string;
 export interface MessageInterface {
   sender: SenderType;
   message: string;
@@ -17,8 +17,8 @@ export interface MessageInterface {
 
 export interface ChatInterface {
   id: string; // 고유ID
-  sender: SenderType; // 너/나
-  messages: Array<MessageInterface>;
+  sender: string;
+  messages: MessageInterface[];
 }
 
 // ChatMainInterface : ChatInterface로 이뤄진 배열

@@ -10,15 +10,21 @@ import Form from '@components/Form';
 import SEARCH from '@assets/search.png';
 
 import { UserInterface } from '@interface/UserInterface';
+import { useEffect } from 'react';
 
 export default function Members() {
   const searchMember = (text: string) => {
     alert(text);
   };
-  const members = useLocalStorage<UserInterface[]>({
+  const memberListData: UserInterface[] = memberList;
+  const [members, setMembers] = useLocalStorage<UserInterface[]>({
     key: 'members',
-    initialValue: memberList,
-  })[0];
+    initialValue: memberListData,
+  });
+
+  useEffect(() => {
+    console.log(members);
+  });
   return (
     <div className="h-full flex flex-col">
       <Header title="목록" />
@@ -29,15 +35,18 @@ export default function Members() {
           placeHolder="검색"
         />
       </div>
-      {members.toString()}
-      {/* {members.map((member, idx) => {
-        <MemberListItem
-          _id="temp"
-          name={member}
-          lastMessage="꺼져"
-          lastTimeStamp="오후 10:34"
-        />;
-      })} */}
+      <div>
+        {' '}
+        {members.map((member) => (
+          <MemberListItem
+            key={member.id}
+            _id={member.id}
+            name={member.userName}
+            lastMessage="꺼져"
+            lastTimeStamp="오후 10:34"
+          />
+        ))}
+      </div>
 
       <BottomMenu />
     </div>

@@ -1,20 +1,20 @@
 import React from 'react';
-import { ChatInterface } from 'interface/ChatInterface';
+import { MessageInterface, SenderType } from 'interface/ChatInterface';
 
-const MessageItem = ({ isOwnMessage, content, emoji }: ChatInterface) => {
+const MessageItem = (isOwnMessage: SenderType, message: MessageInterface) => {
   return (
     <div
       className={`max-w-72 text-body p-2 rounded-xl w-fit ${
-        isOwnMessage
+        isOwnMessage == 'you'
           ? 'bg-primary text-white ms-auto'
           : 'bg-gray-50 text-gray-900 me-auto'
       }`}
     >
-      {content}
-      {emoji && (
+      {message.message}
+      {message.emoji && (
         <div className="absolute -bottom-3 -right-3">
           <img
-            src={emoji}
+            src={message.emoji}
             alt="emoji"
             className="w-5 h-5"
           />
