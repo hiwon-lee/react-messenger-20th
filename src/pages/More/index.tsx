@@ -2,6 +2,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import defaultMessages from '../../data/messages.json';
+import StatusBar from '@components/common/StatusBar';
+import BottomMenu from '@components/common/BottomMenu';
+import Main from '@components/common/MainContent';
 
 export default function More() {
   const userName = useSelector((state: RootState) => state.user.name);
@@ -15,5 +18,11 @@ export default function More() {
   const addMessage = (text: string) => {
     const now = new Date();
   };
-  return <div className="h-full flex flex-col">members</div>;
+  return (
+    <div className="h-full flex flex-col">
+      <StatusBar />
+      <Main>notice</Main>
+      <BottomMenu />
+    </div>
+  );
 }
