@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { ButtonProps } from '@interface/ButtonInterface';
 
 const Button = ({ children, src, type, onClick }: ButtonProps) => {
+  console.log(children);
   return (
     <button
-      className="w-6 h-6 text-center"
+      className="w-full h-full text-center"
       type={type}
       onClick={onClick}
     >
@@ -24,8 +25,8 @@ const Button = ({ children, src, type, onClick }: ButtonProps) => {
 export const MainButton = (props: ButtonProps) => {
   return (
     <div
-      className="rounded-full w-10 h-10 p-2
-    bg-pink-light text-pink-dark flex items-center justify-center 
+      className="rounded-full w-12 h-12
+    bg-pink-light text-largeHeading text-pink-dark flex items-center justify-center 
    "
     >
       <Button
@@ -49,6 +50,26 @@ export const NamedButton = (props: ButtonProps) => {
     </Link>
   );
 };
+export const OnlineTaggedButton = (props: ButtonProps) => {
+  return (
+    <StyledOnlineTaggedButton>
+      {/* <div className="absolute"> */}
+      <MainButton
+        type={props.type}
+        src={props.src}
+        children={props.children}
+      />
+      {/* </div> */}
+      <StyledOnlineTag></StyledOnlineTag>
+    </StyledOnlineTaggedButton>
+  );
+};
+const StyledOnlineTaggedButton = styled.div`
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem 0;
+`;
 const StyledMainButton = styled.div`
   background-color: var(--pink-light);
   width: 3rem;
@@ -60,6 +81,17 @@ const StyledMainButton = styled.div`
   justify-content: center;
 `;
 
+const StyledOnlineTag = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 2px solid white;
+  background-color: green;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+`;
+
 const StyledNamedButton = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,8 +99,8 @@ const StyledNamedButton = styled.div`
   text-align: center;
   justify-content: center;
   button {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     text-align: center;
     img {
       margin: auto;

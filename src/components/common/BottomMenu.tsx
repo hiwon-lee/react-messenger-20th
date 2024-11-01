@@ -45,6 +45,9 @@ export default function BottomMenu() {
 
 const StyledBottomMenu = styled.div`
   display: flex;
-  margin: 1rem;
+  justify-content: space-evenly;
+  border-top: 1px solid var(--gray-70);
+  padding: 1rem;
   gap: 1.5rem;
+  height: 82px;
 `;

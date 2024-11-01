@@ -21,6 +21,8 @@ export default function StatusBar() {
 const StyledStatus = styled.div`
   width: 70px;
   display: flex;
+  // position: fixed;
+
   justify-content: center;
   img {
     width: 70px;

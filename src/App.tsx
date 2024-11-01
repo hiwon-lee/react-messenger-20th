@@ -5,12 +5,13 @@ import StatusBar from './components/common/StatusBar';
 import Members from './pages/Members';
 import Team from './pages/Team';
 import More from './pages/More';
+import Notice from '@pages/Notice';
 
 function App() {
   return (
     <div className="App">
+      {/* <StatusBar /> */}
       <BrowserRouter>
-        <StatusBar />
         <Routes>
           <Route
             path="/"
@@ -19,6 +20,10 @@ function App() {
           <Route
             path="/members"
             element={<Members />}
+          ></Route>
+          <Route
+            path="/notice"
+            element={<Notice />}
           ></Route>
           <Route
             path="/chat"

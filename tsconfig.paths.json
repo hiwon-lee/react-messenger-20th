@@ -11,7 +11,8 @@
       "@hooks/*": ["./hooks/*"],
       "@utils/*": ["./utils/*"],
       "@pages/*": ["./pages/*"],
-      "@interface/*": ["./interface/*"]
+      "@interface/*": ["./interface/*"],
+      "@data/*": ["./data/*"]
     }
   }
 }
