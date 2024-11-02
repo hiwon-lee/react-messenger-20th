@@ -45,13 +45,15 @@ export function MemberListItem(user: ReceiverState) {
           type="button"
         />
       )}
-      <div className="py-4 grow flex gap-1 border-solid border-b-[1px] border-gray-70">
-        <div className="flex flex-col justify-center gap-1 grow pb-2">
+      <div className=" py-4 grow flex gap-1 border-solid border-b-[1px] border-gray-70">
+        <div className="flex flex-col justify-center gap-1 grow">
           {/* 사용자 이름 */}
           <div className="font-subtitle">{user.name}</div>
           {/* item 내용 미리보기 */}
           {user.lastMessage && (
-            <div className="text-body text-gray-500">{user.lastMessage}</div>
+            <StyledMessagePreview className="text-body text-gray-500">
+              {user.lastMessage}
+            </StyledMessagePreview>
           )}
         </div>
         <div className="text-caption text-gray-500">{user.lastTimeStamp}</div>
@@ -63,9 +65,17 @@ export function MemberListItem(user: ReceiverState) {
 const StyledList = styled.div`
   display: flex;
   margin: 0 1rem;
-  height: 76px;
-  // margin: 1rem 1rem 0 1rem;
-  // padding: 0.5rem;
+  height: 78px;
   gap: 1rem;
   border
+`;
+
+const StyledMessagePreview = styled.div`
+  max-width: 220px;
+  height: 100%;
+  font-size: var(--font-body);
+  color: var(--gray-500);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
