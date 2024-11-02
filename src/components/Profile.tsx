@@ -1,6 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleUser } from '@redux/userSlice';
-
 import Button from './Button';
 import { UserInterface } from '@interface/UserInterface';
 

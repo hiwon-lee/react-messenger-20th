@@ -7,7 +7,6 @@ import Header from '@components/common/Header';
 import BottomMenu from '@components/common/BottomMenu';
 import { MemberListItem } from '@components/MemberListItem';
 import Form from '@components/Form';
-import SEARCH from '@assets/search.png';
 
 import { UserInterface } from '@interface/UserInterface';
 import { useEffect } from 'react';

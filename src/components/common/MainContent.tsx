@@ -1,4 +1,3 @@
-import MORE from '@assets/menu/more.png';
 import React from 'react';
 import styled from 'styled-components';
 interface MainProps {

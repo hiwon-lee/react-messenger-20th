@@ -1,20 +1,10 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@redux/store';
-
-import userList from '@data/users.json';
-import Header from '@components/common/Header';
 import BottomMenu from '@components/common/BottomMenu';
 import Main from '@components/common/MainContent';
 import { MainButton, NamedButton } from '@components/Button';
 import StatusBar from '@components/common/StatusBar';
-import { ChatListItem } from '@components/MemberListItem';
-import Form from '@components/Form';
-import useChatMessages from '@hooks/useChatMessages';
+
 import { Link, useParams } from 'react-router-dom';
-import { useLocalStorage } from '@hooks/useLocalStorage';
-import { UserInterface } from '@interface/UserInterface';
-import defaultUserData from '@data/users.json';
+
 import useUserById from '@hooks/useUserById';
 import CHAT from '@assets/chat.png';
 import MUTE from '@assets/mute.png';

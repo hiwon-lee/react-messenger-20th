@@ -11,15 +11,10 @@ export const messageSlice = createSlice({
   name: 'message',
   initialState,
   reducers: {
-    setEmoji: (state, action: PayloadAction<{ id: string; emoji: string }>) => {
-      const { id, emoji } = action.payload;
-      const message = state.messages;
-      // const message = state.find((item) => item.id === id);
-
-      // if (message) {
-      //   message.emoji = emoji;
-      // }
-    },
+    setEmoji: (
+      state,
+      action: PayloadAction<{ id: string; emoji: string }>
+    ) => {},
   },
 });
 

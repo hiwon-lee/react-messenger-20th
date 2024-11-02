@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import type { RootState } from '@redux/store';
-import { useSelector, useDispatch } from 'react-redux';
 import MessageItem from '@components/MessageItem';
 import { ChatInterface } from '@interface/ChatInterface';
-import { setEmoji } from '@redux/messageSlice';
 import Button from '@components/Button';
 
 import angryEmotion from '@assets/emotion/angry.png';
@@ -33,8 +30,8 @@ export default function ChatMain(data: ChatInterface) {
 
   const friendId = data.id;
   const [messages, setMessages] = useState(data.messages);
-  // const messages: MessageInterface[] = data.messages;
 
+  // 이모지반영되면 리렌더링
   useEffect(() => {
     setMessages(data.messages);
   }, [data.messages]);
@@ -48,7 +45,6 @@ export default function ChatMain(data: ChatInterface) {
   }, [messages]);
 
   const handleDoubleClick = (messageId: string) => {
-    console.log(messageId);
     setSelectedMessageId(messageId);
   };
 

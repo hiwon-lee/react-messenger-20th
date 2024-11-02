@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { MainButton, OnlineTaggedButton } from './Button';
+import { OnlineTaggedButton } from './Button';
 import { UserInterface } from '@interface/UserInterface';
 import CHAT from '@assets/chat.png';
 import { Link } from 'react-router-dom';
 
 interface ListItemProps {
   user: UserInterface;
-  children: React.ReactNode; // Allows unique elements to be passed in
+  children: React.ReactNode;
 }
 
 export function ListItem({ user, children }: ListItemProps) {
@@ -25,7 +25,7 @@ export function ListItem({ user, children }: ListItemProps) {
           type="button"
         />
       )}
-      <div className="py-4 grow  flex gap-1 border-solid border-b-[1px] border-gray-70">
+      <div className="py-4 grow flex gap-1 border-solid border-b-[1px] border-gray-70">
         {children}
       </div>
     </StyledList>

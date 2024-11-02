@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { MessageInterface } from '@interface/ChatInterface';
 import { useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
@@ -10,7 +9,7 @@ const MessageItem = (
   const mainUser = useSelector((state: RootState) => state.user.mainUser);
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
 
-  // 배경색을 동적으로 결정
+  // 스타일을 동적으로 결정
   const setMessageStyle = () => {
     let styleStr = '';
     if (message.emoji) styleStr += 'mb-4 ';
