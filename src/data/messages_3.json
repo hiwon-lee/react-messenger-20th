@@ -1,0 +1,59 @@
+{
+  "id": "3",
+  "sender": "이희원",
+  "messages": [
+    {
+      "sender": "me",
+      "message": "안녕 재원아",
+      "timeStamp": "21:41:22",
+      "date": "2024-09-26"
+    },
+    {
+      "sender": "me",
+      "message": "반가워",
+      "timeStamp": "21:41:24",
+      "date": "2024-09-26",
+      "emoji": ""
+    },
+    {
+      "sender": "me",
+      "message": "나는 희원이야",
+      "timeStamp": "21:41:27",
+      "date": "2024-09-26",
+      "emoji": ""
+    },
+    {
+      "sender": "me",
+      "message": "00이지만",
+      "timeStamp": "21:41:42",
+      "date": "2024-09-26",
+      "emoji": ""
+    },
+    {
+      "sender": "me",
+      "message": "액면가는 05지",
+      "timeStamp": "21:41:50",
+      "date": "2024-09-26",
+      "emoji": ""
+    },
+    {
+      "sender": "you",
+      "message": "음~",
+      "timeStamp": "14:47:01",
+      "date": "2024-09-27",
+      "emoji": ""
+    },
+    {
+      "sender": "you",
+      "message": "ㅇㅈ",
+      "timeStamp": "14:47:02",
+      "date": "2024-09-27"
+    },
+    {
+      "sender": "me",
+      "message": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "timeStamp": "14:47:40",
+      "date": "2024-09-27"
+    }
+  ]
+}
