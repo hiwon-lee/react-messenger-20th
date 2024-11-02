@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import defaultMessages from '../../data/messages.json';
 import StatusBar from '@components/common/StatusBar';
@@ -7,8 +5,6 @@ import BottomMenu from '@components/common/BottomMenu';
 import Main from '@components/common/MainContent';
 
 export default function Notice() {
-  const userName = useSelector((state: RootState) => state.user.name);
-
   const [messages, setMessages] = useLocalStorage({
     key: 'messages',
     initialValue: defaultMessages,

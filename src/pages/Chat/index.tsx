@@ -14,7 +14,6 @@ import useChatMessages from '@hooks/useChatMessages';
 import { Link } from 'react-router-dom';
 
 export default function Chat() {
-  const userName = useSelector((state: RootState) => state.user.name);
   const { chatData, addMessage, getLastMessagePreview } = useChatMessages();
 
   // TODO : hook 분리하기
@@ -27,11 +26,6 @@ export default function Chat() {
   // TODO : 각 json파일을 배열에 담고
   // TODO : map함수를 활용해서 채팅상대이름, 최근채팅미리보기, 채팅상대 프로필이미지 가 담긴 아이템을 나열해서 리스트로 완성
   // TODO : ~를 통합한 custom hook 구현
-
-  useEffect(() => {
-    console.log('chat~!~!');
-    console.log(chatData);
-  });
 
   // TODO : 아이디에 맞는 사용자 이름 가져와
 
