@@ -51,8 +51,9 @@ export default function Members() {
         {members.map((member) => (
           <MemberListItem
             key={member.id}
-            _id={member.id}
-            name={member.userName}
+            id={member.id}
+            userName={member.userName}
+            isOnline={member.isOnline}
           />
         ))}
       </Main>

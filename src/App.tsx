@@ -7,11 +7,11 @@ import Team from './pages/Team';
 import More from './pages/More';
 import Notice from '@pages/Notice';
 import ChatRoom from '@pages/Chat/ChatRoom';
+import MemberProfile from '@pages/Members/MemberProfile';
 
 function App() {
   return (
     <div className="App">
-      {/* <StatusBar /> */}
       <BrowserRouter>
         <Routes>
           <Route
@@ -21,6 +21,10 @@ function App() {
           <Route
             path="/members"
             element={<Members />}
+          ></Route>
+          <Route
+            path="/members/:userId"
+            element={<MemberProfile />}
           ></Route>
           <Route
             path="/notice"

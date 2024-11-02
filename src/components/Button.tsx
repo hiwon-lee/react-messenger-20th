@@ -22,11 +22,24 @@ const Button = ({ children, src, type, onClick }: ButtonProps) => {
 };
 
 export const MainButton = (props: ButtonProps) => {
+  const bgSize = props.bgSize ? `${props.bgSize}rem` : '3rem';
+  // const fontSize = props.fontSize ? props.fontSize : 'largeHeading';
+  const fontSizeClass = {
+    largelarge: 'text-largelarge',
+    heading: 'text-heading',
+    largeHeading: 'text-largeHeading',
+    title: 'text-title',
+    subtitle: 'text-subtitle',
+    body: 'text-body',
+    caption: 'text-caption',
+    small: 'text-small',
+  }[props.fontSize || 'largeHeading'];
   return (
     <div
-      className="rounded-full w-12 h-12
-    bg-pink-light text-largeHeading text-pink-dark flex items-center justify-center 
-   "
+      style={{ width: bgSize, height: bgSize }}
+      className={`rounded-full
+      bg-pink-light  ${fontSizeClass} text-pink-dark flex items-center justify-center
+      `}
     >
       <Button
         type={props.type}
@@ -49,17 +62,17 @@ export const NamedButton = (props: ButtonProps) => {
     </Link>
   );
 };
-export const OnlineTaggedButton = (props: ButtonProps) => {
+export const OnlineTaggedButton = (
+  props: ButtonProps & { isOnline: boolean }
+) => {
   return (
     <StyledOnlineTaggedButton>
-      {/* <div className="absolute"> */}
       <MainButton
         type={props.type}
         src={props.src}
         children={props.children}
       />
-      {/* </div> */}
-      <StyledOnlineTag></StyledOnlineTag>
+      <StyledOnlineTag $isOnline={props.isOnline}></StyledOnlineTag>
     </StyledOnlineTaggedButton>
   );
 };
@@ -69,23 +82,13 @@ const StyledOnlineTaggedButton = styled.div`
   height: 3rem;
   margin: 1rem 0;
 `;
-const StyledMainButton = styled.div`
-  background-color: var(--pink-light);
-  width: 3rem;
-  height: 3rem;
-  border-radius: 20px;
-  color: var(--pink-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
-const StyledOnlineTag = styled.div`
+const StyledOnlineTag = styled.div<{ $isOnline?: boolean }>`
   position: absolute;
   bottom: 0;
   right: 0;
   border: 2px solid white;
-  background-color: green;
+  background-color: ${({ $isOnline }) => ($isOnline ? '#8CE184' : '#b0b0b0')};
   width: 12px;
   height: 12px;
   border-radius: 100px;
