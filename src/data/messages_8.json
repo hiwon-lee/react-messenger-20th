@@ -3,38 +3,11 @@
   "sender": "이희원",
   "messages": [
     {
+      "id": "g",
       "sender": "me",
       "message": "안녕 재원아",
       "timeStamp": "오후 10:07",
       "date": "2024-09-26"
-    },
-    {
-      "sender": "me",
-      "message": "반가워",
-      "timeStamp": "21:41:24",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "sender": "me",
-      "message": "나는 희원이야",
-      "timeStamp": "21:41:27",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "sender": "me",
-      "message": "00이지만",
-      "timeStamp": "21:41:42",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "sender": "me",
-      "message": "액면가는 05지",
-      "timeStamp": "오후 10:20",
-      "date": "2024-09-26",
-      "emoji": ""
     }
   ]
 }

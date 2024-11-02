@@ -12,6 +12,7 @@ import { UserInterface } from '@interface/UserInterface';
 import useChatMessages from '@hooks/useChatMessages';
 import { toggleUser } from '@redux/userSlice';
 import useUserById from '@hooks/useUserById';
+import { generateId } from '@utils/generateId';
 
 export default function ChatRoom() {
   const mainUser = useSelector((state: RootState) => state.user.mainUser);
@@ -34,6 +35,7 @@ export default function ChatRoom() {
     const senderType = currentUser.id !== mainUser.id ? 'me' : 'you';
 
     const newMessage = {
+      id: generateId(),
       sender: senderType,
       message: text,
       timeStamp: new Date().toLocaleTimeString('ko-KR', {
@@ -83,7 +85,6 @@ export default function ChatRoom() {
       />
       <ChatMain
         id={userId || ''}
-        sender={friendName || ''}
         messages={friendMessages}
       />
       <ChatForm addMessage={handleAddMessage} />

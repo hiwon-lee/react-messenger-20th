@@ -1,5 +1,6 @@
 export type SenderType = 'you' | 'me' | string;
 export interface MessageInterface {
+  id: string;
   sender: SenderType;
   message: string;
   timeStamp: string;
@@ -10,7 +11,6 @@ export interface MessageInterface {
 // TODO : 이걸 ChatData랑 User인터페이스로 나눠서 사용
 export interface ChatInterface {
   id: string; // 고유ID
-  sender: string;
   messages: MessageInterface[];
 }
 
