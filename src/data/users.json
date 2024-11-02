@@ -3,7 +3,7 @@
     "id": "1",
     "userName": "이지민",
     "profileImg": "",
-    "isOnline": true,
+    "isOnline": false,
     "email": "jimin0416@gmail.com",
     "phoneNum": "01096222790",
     "instagram": "o_ojj_min"
@@ -30,7 +30,7 @@
     "id": "4",
     "userName": "조은호",
     "profileImg": "",
-    "isOnline": true,
+    "isOnline": false,
     "email": "niceho@gmail.com",
     "phoneNum": "01044445555",
     "instagram": "lee"
@@ -39,7 +39,7 @@
     "id": "5",
     "userName": "이채원",
     "profileImg": "",
-    "isOnline": true,
+    "isOnline": false,
     "email": "chaewon@gmail.com",
     "phoneNum": "01055556666",
     "instagram": "lee"
