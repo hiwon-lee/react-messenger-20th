@@ -9,7 +9,7 @@ import emoji from '@assets/emoji.svg';
 import { ChatFormInterface } from 'interface/ChatInterface';
 
 export default function ChatForm({ addMessage }: ChatFormInterface) {
-  const userName = useSelector((state: RootState) => state.user.name);
+  const userName = useSelector((state: RootState) => state.user.currentUser);
 
   return (
     <div className="flex gap-4 justify-between h-23 p-5 bg-border-l-rose-700 ">
@@ -18,7 +18,6 @@ export default function ChatForm({ addMessage }: ChatFormInterface) {
         src={addCircle}
       />
       <Form
-        name={userName}
         onSubmit={(text: string) => addMessage(text)}
         src={emoji}
         placeHolder="메시지를 입력하세요"

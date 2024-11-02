@@ -3,14 +3,13 @@ import { useState } from 'react';
 import Button from '@components/Button';
 
 type FormProps = {
-  name: string;
   src?: string;
   children?: string;
   placeHolder: string;
   onSubmit: (message: string) => void;
 };
 
-const Form = ({ name, src, children, placeHolder, onSubmit }: FormProps) => {
+const Form = ({ src, children, placeHolder, onSubmit }: FormProps) => {
   const [value, setValue] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

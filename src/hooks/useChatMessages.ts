@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
 import userDataList from '@data/users.json';
-import { MessageInterface } from '@interface/ChatInterface';
+import { MessageInterface, ChatData } from '@interface/ChatInterface';
 import { UserInterface } from '@interface/UserInterface';
 import { useLocalStorage } from './useLocalStorage';
-
-interface ChatData {
-  [userId: string]: MessageInterface[];
-}
 
 // users.json에 있는 사용자들의 ID정보를 배열로 가져오는 함수
 function getUserDataById() {
@@ -21,7 +17,7 @@ async function initializeChatData(): Promise<ChatData> {
   const userIdArr: string[] = getUserDataById();
   const allUserMessages: ChatData = {};
 
-  // 비동기 -> 이거 안해주면 데이터 다 가져오기 전에 화면 실행됨
+  // 비동기 -> 이거 해줘야 데이터 다 가져오기 전에 화면 실행됨
   await Promise.all(
     userIdArr.map(async (userID) => {
       const messagesData = await import(`@data/messages_${userID}.json`);
@@ -52,7 +48,6 @@ function useLocalStorageChatData() {
       loadData();
     }
   });
-  //   console.log(`chatchatchat ${chatData}`);
 
   return [chatData, setChatData] as const;
 }
@@ -60,16 +55,6 @@ function useLocalStorageChatData() {
 // chatting 메시지 로컬스토리지에서 조작하는 함수
 function useChatMessages() {
   const [chatData, setChatData] = useLocalStorageChatData();
-  // 로컬 스토리지에서 메시지 로드
-  //   useEffect(() => {
-  //     const savedData = localStorage.getItem('chatData');
-  //     console.log(getUserDataById());
-  //     if (savedData) {
-  //       setChatData(JSON.parse(savedData));
-  //     } else {
-  //       initializeChatData();
-  //     }
-  //   }, []);
 
   // 새로운 메시지 추가 함수
   const addMessage = (userId: string, newMessage: MessageInterface) => {

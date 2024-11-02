@@ -29,8 +29,8 @@ const formatDate = (dateString: string) => {
 
 // ChatMain : 메시지 데이터 렌더링 -> 화면에 보여줌
 export default function ChatMain(data: ChatInterface) {
-  const userName = useSelector((state: RootState) => state.user.name);
-  const messageEmoji = useSelector((state: RootState) => state.message);
+  // const userName = useSelector((state: RootState) => state.user.name);
+  // const messageEmoji = useSelector((state: RootState) => state.message);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const [selectedMessageId, setSelectedMessageId] = useState<string>();
   const dispatch = useDispatch();
@@ -92,13 +92,13 @@ export default function ChatMain(data: ChatInterface) {
               </div>
             )}
             <div onDoubleClick={() => handleDoubleClick(id)}>
-              // TODO :
-              아아아아아악!!!!!!!!!!!!!!!!!!!!!!ㅅㅄㅄㅄㅄㅄㅄㅄㅄㅂㅄㅄㅄ
-              {/* <MessageItem
-                id={id}
-                message={messages}
-                isOwnMessage={sender}
-              /> */}
+              <MessageItem
+                sender={message.sender}
+                message={message.message}
+                timeStamp={message.timeStamp}
+                date={message.date}
+                emoji={message.emoji}
+              />
             </div>
             {/* {message.emoji && (
               <Button
