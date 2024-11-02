@@ -3,7 +3,6 @@ import { toggleUser } from '@redux/userSlice';
 
 import Button from './Button';
 import { UserInterface } from '@interface/UserInterface';
-import { RootState } from '@redux/store';
 
 export default function Profile({ profileImg, userName }: UserInterface) {
   return (

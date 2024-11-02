@@ -3,7 +3,12 @@ import userDataList from '@data/users.json';
 import { MessageInterface, ChatData } from '@interface/ChatInterface';
 import { UserInterface } from '@interface/UserInterface';
 import { useLocalStorage } from './useLocalStorage';
-
+// TODO : 사용자 id를 가져와
+// TODO : 사용자 id와 일치하는 message_{id}.json을 가져와
+// TODO : 각 json파일을 배열에 담고
+// TODO : map함수를 활용해서 채팅상대이름, 최근채팅미리보기, 채팅상대 프로필이미지 가 담긴 아이템을 나열해서 리스트로 완성
+// TODO : ~를 통합한 custom hook 구현
+// TODO : 아이디에 맞는 사용자 이름 가져와
 // users.json에 있는 사용자들의 ID정보를 배열로 가져오는 함수
 function getUserDataById() {
   const userData: UserInterface[] = userDataList;

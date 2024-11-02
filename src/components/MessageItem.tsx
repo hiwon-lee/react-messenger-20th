@@ -19,7 +19,6 @@ const MessageItem = (message: MessageInterface) => {
         ? 'bg-primary text-white ms-auto'
         : 'bg-gray-50 text-gray-900 me-auto';
     }
-    return 'bg-gray-200'; // 기본 배경색
   };
   return (
     <div

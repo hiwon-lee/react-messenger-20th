@@ -1,11 +1,3 @@
-export interface ReceiverState {
-  _id: string;
-  name: string; // 받는 사람 이름
-  profileImg?: string | undefined;
-  lastMessage?: string;
-  lastTimeStamp?: string;
-}
-
 export type SenderType = 'you' | 'me' | string;
 export interface MessageInterface {
   sender: SenderType;
@@ -24,11 +16,6 @@ export interface ChatInterface {
 
 export interface ChatData {
   [userId: string]: MessageInterface[];
-}
-
-// ChatMainInterface : ChatInterface로 이뤄진 배열
-export interface ChatMainInterface {
-  messages: ChatInterface[];
 }
 
 // ChatFormProps : localStorage내부 배열에 채팅메시지 추가

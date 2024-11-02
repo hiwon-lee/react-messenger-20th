@@ -1,64 +1,76 @@
 import styled from 'styled-components';
 import { MainButton, OnlineTaggedButton } from './Button';
-import { ChatInterface, ReceiverState } from '@interface/ChatInterface';
+import { UserInterface } from '@interface/UserInterface';
+import CHAT from '@assets/chat.png';
+import { Link } from 'react-router-dom';
 
-export default function ListItem(user: ReceiverState) {
+interface ListItemProps {
+  user: UserInterface;
+  children: React.ReactNode; // Allows unique elements to be passed in
+}
+
+export function ListItem({ user, children }: ListItemProps) {
   return (
     <StyledList>
       {user.profileImg ? (
-        <MainButton
+        <OnlineTaggedButton
           src={user.profileImg}
+          isOnline={user.isOnline}
           type="button"
         />
       ) : (
-        <MainButton
-          children={user.name.charAt(0)}
+        <OnlineTaggedButton
+          children={user.userName.charAt(0)}
+          isOnline={user.isOnline}
           type="button"
         />
       )}
-      <div className="grow flex gap-1 border-solid border-b-[1px] border-gray-70">
-        <div className="flex flex-col gap-1 grow">
-          {/* 사용자 이름 */}
-          <div>{user.name}</div>
-          {/* item 내용 미리보기 */}
-          <div className="text-body text-gray-500">
-            {user.lastMessage ? user.lastMessage : ''}
-          </div>
-        </div>
-        <div className="text-caption text-gray-500">{user.lastTimeStamp}</div>
+      <div className="py-4 grow  flex gap-1 border-solid border-b-[1px] border-gray-70">
+        {children}
       </div>
     </StyledList>
   );
 }
 
-export function MemberListItem(user: ReceiverState) {
+export function MemberListItem(user: UserInterface) {
   return (
-    <StyledList>
-      {user.profileImg ? (
-        <OnlineTaggedButton
-          src={user.profileImg}
-          type="button"
-        />
-      ) : (
-        <OnlineTaggedButton
-          children={user.name.charAt(0)}
-          type="button"
-        />
-      )}
-      <div className=" py-4 grow flex gap-1 border-solid border-b-[1px] border-gray-70">
-        <div className="flex flex-col justify-center gap-1 grow">
+    <ListItem user={user}>
+      <div className="flex flex-col justify-center gap-1 grow">
+        <Link to={`${user.id}`}>
           {/* 사용자 이름 */}
-          <div className="font-subtitle">{user.name}</div>
-          {/* item 내용 미리보기 */}
-          {user.lastMessage && (
-            <StyledMessagePreview className="text-body text-gray-500">
-              {user.lastMessage}
-            </StyledMessagePreview>
-          )}
-        </div>
-        <div className="text-caption text-gray-500">{user.lastTimeStamp}</div>
+          <div className="font-subtitle">{user.userName}</div>
+        </Link>
       </div>
-    </StyledList>
+      <Link
+        to={`/chat/${user.id}`}
+        className="flex items-center justify-center mx-3"
+      >
+        <img
+          src={CHAT}
+          alt="chat"
+        />
+      </Link>
+    </ListItem>
+  );
+}
+
+export function ChatListItem(user: UserInterface) {
+  return (
+    <ListItem user={user}>
+      <div className="flex flex-col justify-center gap-1 grow">
+        {/* 사용자 이름 */}
+        <div className="font-subtitle">{user.userName}</div>
+        {/* item 내용 미리보기 */}
+        {user.lastMessage && (
+          <StyledMessagePreview className="text-body text-gray-500">
+            {user.lastMessage}
+          </StyledMessagePreview>
+        )}
+      </div>
+      <div className="text-caption text-gray-500">
+        {user.lastMessageTimeStamp}
+      </div>
+    </ListItem>
   );
 }
 
@@ -71,7 +83,7 @@ const StyledList = styled.div`
 `;
 
 const StyledMessagePreview = styled.div`
-  max-width: 220px;
+  max-width: 200px;
   height: 100%;
   font-size: var(--font-body);
   color: var(--gray-500);
