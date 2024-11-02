@@ -43,19 +43,6 @@ function useChatMessages() {
     });
     localStorage.setItem('messageData', JSON.stringify(allUserMessages));
     setChatData(allUserMessages);
-    // import('@data/messages_1.json').then((messages_1) => {
-    //   import('@data/messages_2.json').then((messages_2) => {
-    //     import('@data/messages_3.json').then((messages_3) => {
-    //       const initialData: ChatData = {
-    //         '1': messages_1.messages,
-    //         '2': messages_2.messages,
-    //         '3': messages_3.messages,
-    //       };
-    //       localStorage.setItem('chatData', JSON.stringify(initialData));
-    //       setChatData(initialData);
-    //     });
-    //   });
-    // });
   };
 
   // 새로운 메시지 추가 함수

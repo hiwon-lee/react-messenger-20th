@@ -1,17 +1,16 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@redux/store';
-import { useLocalStorage } from '@hooks/useLocalStorage';
-import useChatMessages from '@hooks/useChatMessages';
 
-import userList from '../../data/users.json';
-import { MemberListItem } from '@components/MemberListItem';
+import userList from '@data/users.json';
 import Header from '@components/common/Header';
-import { MainButton } from '@components/Button';
 import BottomMenu from '@components/common/BottomMenu';
 import Main from '@components/common/MainContent';
+import { MainButton } from '@components/Button';
 import StatusBar from '@components/common/StatusBar';
+import { MemberListItem } from '@components/MemberListItem';
 import Form from '@components/Form';
-import { useEffect } from 'react';
+import useChatMessages from '@hooks/useChatMessages';
 
 export default function Chat() {
   const userName = useSelector((state: RootState) => state.user.name);
@@ -27,12 +26,20 @@ export default function Chat() {
   // TODO : 각 json파일을 배열에 담고
   // TODO : map함수를 활용해서 채팅상대이름, 최근채팅미리보기, 채팅상대 프로필이미지 가 담긴 아이템을 나열해서 리스트로 완성
   // TODO : ~를 통합한 custom hook 구현
+
   useEffect(() => {
     console.log('chat');
     console.log(chatData);
   });
 
-  // TODO :
+  // TODO : 아이디에 맞는 사용자 이름 가져와
+
+  const userNames: { [key: string]: string } = {};
+  userList.forEach((user) => {
+    userNames[user.id] = user.userName;
+  });
+  // TODO : 채팅 리스트 컴퍼넌트 구현
+
   return (
     <div className="h-full flex flex-col">
       <StatusBar />
@@ -57,26 +64,12 @@ export default function Chat() {
             <MemberListItem
               key={userId}
               _id={userId}
-              name={`${userId}`}
+              name={userNames[userId] || '(알 수 없음)'}
               lastMessage={lastMessageInfo.message}
               lastTimeStamp={lastMessageInfo.timeStamp}
             />
           );
         })}
-        {userList.map((user, idx) => (
-          <MemberListItem
-            key={user.id}
-            _id={user.id}
-            name={user.userName}
-            lastMessage="꺼져"
-            lastTimeStamp="오후 10:34"
-          />
-          //   <MemberListItem
-          //     _id={user.id}
-          //     name={user.userName}
-          //     profileImg={user.profileImg}
-          //   />
-        ))}
       </Main>
 
       <BottomMenu />
