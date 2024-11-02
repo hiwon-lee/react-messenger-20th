@@ -1,43 +1,19 @@
 {
   "id": "4",
-  "sender": "이희원",
+  "sender": "조은호",
   "messages": [
     {
       "id": "d",
       "sender": "me",
-      "message": "안녕 재원아",
+      "message": "안녕 희원아",
       "timeStamp": "오후 10:07",
       "date": "2024-09-26"
     },
     {
       "id": "d1",
       "sender": "me",
-      "message": "반가워",
+      "message": "난 안반가워",
       "timeStamp": "21:41:24",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "d2",
-      "sender": "me",
-      "message": "나는 희원이야",
-      "timeStamp": "21:41:27",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "d3",
-      "sender": "me",
-      "message": "00이지만",
-      "timeStamp": "21:41:42",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "d4",
-      "sender": "me",
-      "message": "액면가는 05지",
-      "timeStamp": "오후 10:20",
       "date": "2024-09-26",
       "emoji": ""
     }

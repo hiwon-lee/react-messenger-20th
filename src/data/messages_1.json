@@ -1,70 +1,9 @@
 {
   "id": "1",
-  "sender": "이희원",
+  "sender": "이지민",
   "messages": [
     {
-      "id": "a",
-      "sender": "me",
-      "message": "안녕 재원아",
-      "timeStamp": "오후 10:07",
-      "date": "2024-09-26"
-    },
-    {
-      "id": "a12",
-
-      "sender": "me",
-      "message": "반가워",
-      "timeStamp": "21:41:24",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "a2",
-
-      "sender": "me",
-      "message": "나는 희원이야",
-      "timeStamp": "21:41:27",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "a3",
-
-      "sender": "me",
-      "message": "00이지만",
-      "timeStamp": "21:41:42",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "a4",
-
-      "sender": "me",
-      "message": "액면가는 05지",
-      "timeStamp": "오후 10:20",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "a5",
-
-      "sender": "you",
-      "message": "음~",
-      "timeStamp": "14:47:01",
-      "date": "2024-09-27",
-      "emoji": ""
-    },
-    {
-      "id": "a6",
-
-      "sender": "you",
-      "message": "ㅇㅈ",
-      "timeStamp": "14:47:02",
-      "date": "2024-09-27"
-    },
-    {
       "id": "a7",
-
       "sender": "me",
       "message": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
       "timeStamp": "오전 08:20",

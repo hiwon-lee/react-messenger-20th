@@ -1,66 +1,18 @@
 {
   "id": "3",
-  "sender": "이희원",
+  "sender": "강다혜",
   "messages": [
-    {
-      "id": "c",
-
-      "sender": "me",
-      "message": "안녕 재원아",
-      "timeStamp": "오후 10:07",
-      "date": "2024-09-26"
-    },
-    {
-      "id": "c1",
-      "sender": "me",
-      "message": "반가워",
-      "timeStamp": "21:41:24",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "c2",
-      "sender": "me",
-      "message": "나는 희원이야",
-      "timeStamp": "21:41:27",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "c3",
-      "sender": "me",
-      "message": "00이지만",
-      "timeStamp": "21:41:42",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "c4",
-      "sender": "me",
-      "message": "액면가는 05지",
-      "timeStamp": "오후 10:20",
-      "date": "2024-09-26",
-      "emoji": ""
-    },
-    {
-      "id": "c5",
-      "sender": "you",
-      "message": "음~",
-      "timeStamp": "14:47:01",
-      "date": "2024-09-27",
-      "emoji": ""
-    },
-    {
-      "id": "c6",
-      "sender": "you",
-      "message": "ㅇㅈ",
-      "timeStamp": "14:47:02",
-      "date": "2024-09-27"
-    },
     {
       "id": "c7",
       "sender": "me",
       "message": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+      "timeStamp": "오전 08:20",
+      "date": "2024-09-27"
+    },
+    {
+      "id": "c8",
+      "sender": "you",
+      "message": "작작쪼개",
       "timeStamp": "오전 08:20",
       "date": "2024-09-27"
     }
