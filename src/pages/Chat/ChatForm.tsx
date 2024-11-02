@@ -13,10 +13,12 @@ export default function ChatForm({ addMessage }: ChatFormInterface) {
 
   return (
     <div className="flex gap-4 justify-between h-23 p-5 bg-border-l-rose-700 ">
-      <Button
-        type="button"
-        src={addCircle}
-      />
+      <div className="w-7">
+        <Button
+          type="button"
+          src={addCircle}
+        />
+      </div>
       <Form
         onSubmit={(text: string) => addMessage(text)}
         src={emoji}

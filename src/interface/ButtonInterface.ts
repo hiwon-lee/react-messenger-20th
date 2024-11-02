@@ -1,4 +1,6 @@
 export interface ButtonProps {
+  bgSize?: string;
+  fontSize?: string | number;
   children?: any;
   src?: string;
   buttonName?: string;

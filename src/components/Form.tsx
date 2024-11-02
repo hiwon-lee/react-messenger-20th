@@ -36,10 +36,12 @@ const Form = ({ src, children, placeHolder, onSubmit }: FormProps) => {
           placeholder={placeHolder}
         ></input>
       </form>
-      <Button
-        type="button"
-        src={src}
-      ></Button>
+      <div className="w-4 flex justify-center ">
+        <Button
+          type="button"
+          src={src}
+        ></Button>
+      </div>
     </div>
   );
 };

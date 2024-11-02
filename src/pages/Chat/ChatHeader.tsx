@@ -22,7 +22,6 @@ export default function ChatHeader({
   const [user, setUser] = useState(friend);
   const dispatch = useDispatch();
   const currUser = useSelector((state: RootState) => state.user.currentUser);
-
   const mainUser = useSelector((state: RootState) => state.user.mainUser);
   const handleProfileToMain = () => {
     dispatch(toggleUser(mainUser));
@@ -31,10 +30,9 @@ export default function ChatHeader({
   const handleProfile = () => {
     setUser(currUser);
     onProfileClick();
-    // dispatch(toggleUser(currUser));
   };
   return (
-    <div className="flex items-center my-2.5 mx-5 bg-border-l-indigo-500">
+    <div className="flex items-center py-2.5 px-5 bg-border-l-indigo-500 border-b-[1px] border-solid border-gray-70 ">
       <Link to={'/chat'}>
         <img
           onClick={handleProfileToMain}
@@ -48,7 +46,9 @@ export default function ChatHeader({
       </div>
       <div className="mx-2.5 flex flex-col ">
         <p>{user.userName}</p>
-        <p className="text-gray-500 text-caption">{lastMessageTimeStamp}</p>
+        <p className="text-gray-500 text-caption">
+          마지막 접속 {lastMessageTimeStamp}
+        </p>
       </div>
     </div>
   );
