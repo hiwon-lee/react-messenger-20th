@@ -82,7 +82,23 @@ function useChatMessages() {
     };
   };
 
-  return { chatData, addMessage, getLastMessagePreview };
+  // 메시지 업데이트 함수
+  const updateMessageInStorage = (
+    userId: string,
+    updatedMessages: MessageInterface[]
+  ) => {
+    const updatedChatData = { ...chatData, [userId]: updatedMessages };
+
+    setChatData(updatedChatData);
+    localStorage.setItem('chatData', JSON.stringify(updatedChatData));
+  };
+
+  return {
+    chatData,
+    addMessage,
+    getLastMessagePreview,
+    updateMessageInStorage,
+  };
 }
 
 export default useChatMessages;

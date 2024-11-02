@@ -16,6 +16,8 @@ import Main from '@components/common/MainContent';
 import { MainButton } from '@components/Button';
 
 export default function Members() {
+  const mainUser = useSelector((state: RootState) => state.user.mainUser);
+
   // TODO : hook 분리하기
   const searchMember = (text: string) => {
     alert(text);
@@ -42,10 +44,17 @@ export default function Members() {
           />
         </div>
         <div className="flex justify-center">
-          <MainButton
-            type="button"
-            children="박"
-          />
+          {mainUser.profileImg ? (
+            <MainButton
+              type="button"
+              src={mainUser.profileImg}
+            />
+          ) : (
+            <MainButton
+              type="button"
+              children={mainUser.userName.charAt(0)}
+            />
+          )}
         </div>
 
         {members.map((member) => (
