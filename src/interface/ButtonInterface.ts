@@ -1,5 +1,5 @@
 export interface ButtonProps {
-  children?: string;
+  children?: any;
   src?: string;
   buttonName?: string;
   link?: string;

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ButtonProps } from '@interface/ButtonInterface';
 
 const Button = ({ children, src, type, onClick }: ButtonProps) => {
-  console.log(children);
   return (
     <button
       className="w-full h-full text-center"
