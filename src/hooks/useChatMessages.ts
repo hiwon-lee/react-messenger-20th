@@ -2,48 +2,74 @@ import { useState, useEffect } from 'react';
 import userDataList from '@data/users.json';
 import { MessageInterface } from '@interface/ChatInterface';
 import { UserInterface } from '@interface/UserInterface';
+import { useLocalStorage } from './useLocalStorage';
 
 interface ChatData {
   [userId: string]: MessageInterface[];
 }
 
-function useChatMessages() {
-  const [chatData, setChatData] = useState<ChatData>({});
+// users.json에 있는 사용자들의 ID정보를 배열로 가져오는 함수
+function getUserDataById() {
+  const userData: UserInterface[] = userDataList;
+  const usersIdArr: string[] = userData.map((data) => data.id);
+  return usersIdArr;
+}
 
-  // 로컬 스토리지에서 메시지 로드
+// 초기화: 처음 사용할 때 JSON 데이터를 로컬 스토리지에 저장
+async function initializeChatData(): Promise<ChatData> {
+  // JSON 데이터 로드 (서버로부터 초기 데이터를 불러오는 형태도 가능)
+  const userIdArr: string[] = getUserDataById();
+  const allUserMessages: ChatData = {};
+
+  // 비동기 -> 이거 안해주면 데이터 다 가져오기 전에 화면 실행됨
+  await Promise.all(
+    userIdArr.map(async (userID) => {
+      const messagesData = await import(`@data/messages_${userID}.json`);
+      allUserMessages[userID] = messagesData.messages;
+    })
+  );
+  console.log('here!!');
+  console.log(allUserMessages);
+  return allUserMessages;
+}
+
+function useLocalStorageChatData() {
+  const [chatData, setChatData] = useLocalStorage<ChatData>({
+    key: 'chatData',
+    initialValue: {},
+  });
+
+  // useEffect 안쓰고 비동기 함수로 작성하면 안돼 -> 왜냐면 React hook&component는 async선언 불가
+  // 따라서 동기적으로 JSX반환해야되고
+  // 비동기 데이터 가져오려면 useEffect로
   useEffect(() => {
-    const savedData = localStorage.getItem('chatData');
-    console.log(getUserDataById());
-    if (savedData) {
-      setChatData(JSON.parse(savedData));
-    } else {
-      initializeChatData();
+    const loadData = async () => {
+      const initialData = await initializeChatData();
+      setChatData(initialData);
+    };
+
+    if (Object.keys(chatData).length === 0) {
+      loadData();
     }
-  }, []);
+  });
+  //   console.log(`chatchatchat ${chatData}`);
 
-  // users.json에 있는 사용자들의 ID정보를 배열로 가져오는 함수
-  const getUserDataById = () => {
-    const userData: UserInterface[] = userDataList;
-    const usersIdArr: string[] = userData.map((data) => data.id);
-    return usersIdArr;
-  };
+  return [chatData, setChatData] as const;
+}
 
-  // 초기화: 처음 사용할 때 JSON 데이터를 로컬 스토리지에 저장
-  const initializeChatData = () => {
-    // JSON 데이터 로드 (서버로부터 초기 데이터를 불러오는 형태도 가능)
-    const userIdArr: string[] = getUserDataById();
-    const allUserMessages: ChatData = {};
-    userIdArr.forEach((userID, idx) => {
-      import(`@data/messages_${userID}.json`).then((messagesData) => {
-        // 새로운 배열을 생성하고 첫 번째 메시지를 추가
-        console.log(`userID ${userID}`);
-        console.log(messagesData);
-        allUserMessages[userID] = messagesData.messages;
-      });
-    });
-    localStorage.setItem('messageData', JSON.stringify(allUserMessages));
-    setChatData(allUserMessages);
-  };
+// chatting 메시지 로컬스토리지에서 조작하는 함수
+function useChatMessages() {
+  const [chatData, setChatData] = useLocalStorageChatData();
+  // 로컬 스토리지에서 메시지 로드
+  //   useEffect(() => {
+  //     const savedData = localStorage.getItem('chatData');
+  //     console.log(getUserDataById());
+  //     if (savedData) {
+  //       setChatData(JSON.parse(savedData));
+  //     } else {
+  //       initializeChatData();
+  //     }
+  //   }, []);
 
   // 새로운 메시지 추가 함수
   const addMessage = (userId: string, newMessage: MessageInterface) => {

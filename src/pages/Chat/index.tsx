@@ -11,6 +11,7 @@ import StatusBar from '@components/common/StatusBar';
 import { MemberListItem } from '@components/MemberListItem';
 import Form from '@components/Form';
 import useChatMessages from '@hooks/useChatMessages';
+import { Link } from 'react-router-dom';
 
 export default function Chat() {
   const userName = useSelector((state: RootState) => state.user.name);
@@ -28,7 +29,7 @@ export default function Chat() {
   // TODO : ~를 통합한 custom hook 구현
 
   useEffect(() => {
-    console.log('chat');
+    console.log('chat~!~!');
     console.log(chatData);
   });
 
@@ -61,13 +62,15 @@ export default function Chat() {
         {Object.keys(chatData).map((userId) => {
           const lastMessageInfo = getLastMessagePreview(userId);
           return (
-            <MemberListItem
-              key={userId}
-              _id={userId}
-              name={userNames[userId] || '(알 수 없음)'}
-              lastMessage={lastMessageInfo.message}
-              lastTimeStamp={lastMessageInfo.timeStamp}
-            />
+            <Link to={`./${userId}`}>
+              <MemberListItem
+                key={userId}
+                _id={userId}
+                name={userNames[userId] || '(알 수 없음)'}
+                lastMessage={lastMessageInfo.message}
+                lastTimeStamp={lastMessageInfo.timeStamp}
+              />
+            </Link>
           );
         })}
       </Main>

@@ -8,10 +8,13 @@ import ChatHeader from './ChatHeader';
 import ChatMain from './ChatMain';
 import ChatForm from './ChatForm';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function ChatRoom(data: ChatInterface) {
+export default function ChatRoom() {
+  // URL에서 userId 가져오기
+  const { userId } = useParams<{ userId: string }>();
+
   const userName = useSelector((state: RootState) => state.user.name);
-  //   const messages: MessageInterface[] = data.messages;
   const initialMessages = defaultMessages as ChatInterface;
 
   const [savedMessage, setMessages] = useLocalStorage<ChatInterface>({
@@ -36,20 +39,11 @@ export default function ChatRoom(data: ChatInterface) {
       date: now.toISOString().split('T')[0], // YYYY-MM-DD
       emoji: undefined, // 이모지 없음
     };
-    // savedMessage.push(messageData);
-
-    // TODO : 삭제 여부 판단
-    // const newMessage: ChatInterface = {
-    //   id: now.toISOString(), // 고유 ID로 ISO string
-    //   sender: sender,
-    //   messages: messages,
-    // };
-
-    // setMessages([savedMessage, messageData]);
   };
   return (
     <div className="h-full flex flex-col">
       <ChatHeader />
+      방이다.
       {/* <ChatMain messages={messages} /> */}
       <ChatForm addMessage={(text: string) => addMessage(text)} />
     </div>

@@ -6,6 +6,7 @@ import Members from './pages/Members';
 import Team from './pages/Team';
 import More from './pages/More';
 import Notice from '@pages/Notice';
+import ChatRoom from '@pages/Chat/ChatRoom';
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
             path="/chat"
             element={<Chat />}
           ></Route>
+          <Route
+            path="/chat/:userId"
+            element={<ChatRoom />}
+          />{' '}
+          {/* 각 대화 방 경로 */}
           <Route
             path="/team"
             element={<Team />}
